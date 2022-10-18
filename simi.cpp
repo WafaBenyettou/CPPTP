@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -14,59 +13,89 @@ using std::ifstream; using std::vector;
 
 
 int main() {
+    
 
-   ifstream file, file1;
+   // variables and data
+   ifstream file1, file2;
  
    string filename1, filename2;
+  
+   // two vectors
+   vector <string> vector1;
+   vector <string> vector2;
 
-   vector <string> v;
-   vector <string> d;
-
-   string str, str1;
+   string string1, string2;
 
 
-    cout << " compare : " ;
+//Handling files part
+
+    // reading file from user input
+    cout << "compare : " ;
     cin >> filename1 >> filename2;
-
-   file.open(filename1.c_str()); 
-   file1.open(filename2.c_str()); 
+   // opening files
+   file1.open(filename1.c_str()); 
+   file2.open(filename2.c_str()); 
    
-
-   if(file.fail() || file1.fail()){
+   // check if file is not open
+   if(file2.fail() || file1.fail()){
        cerr << "Error opening file" << endl;
        exit(1);
    }
 
+   // else file is open
    else{
-   while(file >> str){
-    v.push_back(str);
+    // inserting values from file to vector
+   while(file1 >> string1){
+    vector1.push_back(string1);
     }
-   //copy(v.begin(), v.end(), ostream_iterator<string>(cout, "\n"));
+    //displaying vector values
+   //copy(vector1.begin(), vector1.end(), ostream_iterator<string>(cout, "\n"));
 
-   while(file1 >> str1){
-    d.push_back(str1);
+   while(file2 >> string2){
+    vector2.push_back(string2);
     }
-   //copy(d.begin(), d.end(), ostream_iterator<string>(cout, "\n"));
+   //copy(vector2.begin(), vector2.end(), ostream_iterator<string>(cout, "\n"));
 
 
-        int sim =0;
-        int dif =0;
-        int percentage =0;
-        for(int i=0; i<v.size(); i++){
-            if(v[i] == d[i]){
-                sim++;
+
+
+// check similarity part
+       
+        int similar =0; 
+        int diffrent =0;
+        int percentage,max ;
+       
+       //getting the largest vector 
+
+        if (vector1.size()>=vector2.size()){
+            max= vector1.size();
+
+        }else{
+            
+            max=vector2.size();
+          
+        }
+         // checking similarity
+     
+        for(int i=0; i<max; i++){
+            if(vector1[i] == vector2[i]){
+                similar++;
+                
             }
             else{
-                dif++;
-            }  
+                diffrent++;
+            } 
+           
         }
 
-        percentage= (sim*100)/v.size();
-      
-        cout << percentage << "%"<< endl;
-            
-      file.close();
+       
+        // fct of similarity
+        percentage= ((similar)*100)/max;
+      //displaying similarity
+      cout << percentage << "%"<<endl;
+     //closing file
       file1.close();
+      file2.close();
    }
 
    system("pause");
