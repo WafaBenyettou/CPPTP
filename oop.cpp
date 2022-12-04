@@ -1,7 +1,8 @@
-//100% ghalet
+//100% ghalet 
 #include <iostream>
 using namespace std;
 
+//creating class facteur
 class Facteur{
     private:
         string name;
@@ -44,6 +45,7 @@ class Facteur{
         return geographiczone;
     }
 
+    // methode disturbute
     void distribuer(){
         cout<<"distribuer"<<endl;
     }
@@ -60,6 +62,8 @@ class Facteur{
 
 };
 
+
+//creating the habitants class
 class Habitants{
     private:
     string geographiczone;
@@ -74,6 +78,8 @@ class Habitants{
     }
 };
 
+
+//creating recommandes class
 class Recommandes{
     
     private:
@@ -85,13 +91,14 @@ class Recommandes{
         this->facture_id = facture_id;
         this->destinataire_name = destinataire_name;
     }
-   
+   //displaying info methode
     void getInformation(){
         cout << "Facture ID: " << facture_id << endl;
         cout << "Destinataire Name: " << destinataire_name << endl;
     }
 };
 
+//inheritance
 class Letters:public Recommandes{
     public:
     Letters(string facture_id, string destinataire_name):Recommandes(facture_id, destinataire_name){
@@ -111,9 +118,10 @@ class Colis:public Recommandes{
 int main(){
      Facteur facteur1("Mohamed","123",25,"Alger");
      Habitants habitants1("Alger","Mohamed",123);
+    
      Recommandes recommandes1("123","Mohamed");
      
-    recommandes1.getInformation();
+     recommandes1.getInformation();
        
     system("pause>0");
     return 0;
