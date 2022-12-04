@@ -19,3 +19,5 @@ percentage = ((similar)*100)/max;
 # TP02: OOP IN C++
 
 Tous les jours, le facteur distribue des recommandés dans uns zone géographique qui lui est affectée. Les habitants sont aussi associés à une zone géographique. Les recommandés sont de deux sortes : lettres ou colis. Comme plusieurs facteurs peuvent intervenir sur la même zone, on souhaite, pour chaque recommandé, le facteur qui l’a distribué, en plus du destinataire.
+
+![6](https://user-images.githubusercontent.com/83190429/205498228-0d3f8fa7-394b-42e5-9cae-a9f50958bc13.png)
