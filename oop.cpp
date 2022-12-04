@@ -1,4 +1,3 @@
-//100% ghalet
 #include <iostream>
 using namespace std;
 
