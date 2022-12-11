@@ -11,8 +11,8 @@
 using namespace std;
 //Save data into log file 
 
-void saveData(std::string data){
-    std::fstream logFile;
+void saveData(string data){
+    fstream logFile;
     
     logFile.open(LOG_FILE, std::ios::app);
     logFile << data;
